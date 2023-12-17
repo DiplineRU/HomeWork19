@@ -1,17 +1,14 @@
 package com.amam.collections1.controllers;
 
 import com.amam.collections1.services.for_services.Employee;
-import com.amam.collections1.services.EmployeeServiceImpl;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Collection;
 
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-    private final EmployeeServiceImpl ES;
+    private final com.amam.collections1.services.employeeServiceImpl ES;
 
-    public EmployeeController(EmployeeServiceImpl ES) {
+    public EmployeeController(com.amam.collections1.services.employeeServiceImpl ES) {
         this.ES = ES;
     }
 
