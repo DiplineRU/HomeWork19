@@ -1,55 +1,46 @@
-package org.example;
+package com.amam.collections1.services.for_services;
 
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Objects;
 
 public class Employee {
-    private final String lastName;
+
     private final String firstName;
-    private final int departmentId;
-    private final double salary;
-    public Employee(String lastName, String firstName, int departmentId, float salary){
+    private final String secondName;
+    private final int unit;
+    private final float salary;
+    public Employee(String firstName, String secondName, int unit, float salary) {
         this.firstName = firstName;
-        this.lastName = lastName;
-        this.departmentId = departmentId;
+        this.secondName = secondName;
+        this.unit = unit;
         this.salary = salary;
     }
-    public Employee(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        salary = 0;
-        departmentId = 0;
+    public String getFirstName() {
+        return firstName;
     }
-    public int getDepartment(){
-        return this.departmentId;
+    public String getSecondName() {
+        return secondName;
     }
-    // 3 реализация
-    public double getSalary(){
-        return this.salary;
+    public int getUnit() {
+        return unit;
     }
-    public String getFirstName(){
-        return this.firstName;
+    public float getSalary() {
+        return salary;
     }
-    public String getLastName(){
-        return this.lastName;
+    @Override
+    public String toString() {
+        return firstName + " " + secondName + " [подразделение: " + unit + ", з/п: " + String.format("%,.2f", salary) + " руб.]";
     }
-    public String toKey() {
-        return firstName + lastName;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(firstName, employee.firstName) && Objects.equals(secondName, employee.secondName);
     }
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(this.firstName+this.lastName);
+        return Objects.hash(firstName, secondName);
     }
-    @Override
-    public boolean equals(Object other) {
-        if (other == null) {
-            return false;
-        }
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        Employee c2 = (Employee) other;
-        return this.firstName.equals(c2.firstName) && this.lastName.equals(c2.lastName);
-    }
+
 }
