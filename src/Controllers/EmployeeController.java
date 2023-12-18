@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-    private final com.amam.collections1.services.employeeServiceImpl ES;
+    private final EmployeeService employeeService;
 
-    public EmployeeController(com.amam.collections1.services.employeeServiceImpl ES) {
+    public EmployeeController(com.amam.collections1.services.EmployeeServiceImpl ES) {
         this.ES = ES;
     }
 

@@ -10,12 +10,12 @@ import java.util.Map;
 import java.util.Objects;
 
 @Service
-public class employeeServiceImpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     private final Map<Integer, Employee> employeesBook;
     private int id;
 
-    public employeeServiceImpl() {
+    public EmployeeServiceImpl() {
         this.employeesBook = new HashMap<>();
     }
 

@@ -10,11 +10,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public class departmentServiceImpl implements DepartmentService {
+public class DepatmentServiceImpl implements DepartmentService {
 
-    private final EmployeeService ES;
-
-    public departmentServiceImpl(EmployeeService es) {
+    private final EmployeeService employeeService;
+    public DepatmentServiceImpl(EmployeeService es) {
         ES = es;
     }
 
